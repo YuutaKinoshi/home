@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: url('../images/wallpaper.png') no-repeat center / cover;
+}
+
+i {
+    color: white;
+    font-size: 2em;
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 1));
+    transition: .35s;
+}
+
+i:hover {
+    cursor: pointer;
+    transform: scale(1.1)
+}
+
+i:active {
+    transform: scale(1);
+}
+
+.container {
+    max-width: 1100px;
+}
+
+.header-container {
+    position: absolute;
+    width: 100%;
+    bottom: 10%;
+}
+
+.header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+}
+
+.socials {
+    position: absolute;
+    right: 40px;
+    top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.fa-folder-open {
+    display: none;
+}
+
+.fa-xing {
+    position: absolute;
+    bottom: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: .5s;
+    z-index: 6;
+}
+
+.fa-xing-up {
+    bottom: 10%;
+    color: black;
+    position: absolute;
+    z-index: 2;
+    transform: translateX(0%);
+    z-index: 6;
+}
+
+.menuOpen {
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip-path: circle(0% at 0 100%);
+    transition: .5s;
+    z-index: 5;
+}
+
+.menuOpenClicked {
+    clip-path: circle(141.2% at 0 100%);
+}
+
+.menuOpen {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    list-style: none;
+    font-size: 3em;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.menuOpen a {
+    margin: 20px 0;
+    text-align: center;
+    font-size: 0.65em;
+    transition: .35s;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+    transition: .5s;
+    color: black;
+}
+
+.menuOpen a:hover {
+    transform: scale(1.1);
+}
+
+.menuOpen a i {
+    filter: none;
+    color: black;
+    transform: none;
+}
+
+
+.spotify {
+    width: 30%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transform: translateX(-300px) scale(0);
+    transition: .5s;
+}
+
+.spotify-open {
+    transform: translateX(0px) scale(1);
+}
+
+.spotify iframe {
+    width: 100%;
+    height: 100vh;
+}
+
+
+.folder-container {
+    width: 700px;
+    height: 400px;
+    background: rgba(255, 255, 255);
+    padding: 3px;
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    z-index: 0;
+    transform: translate(354px, 391px) scale(0);
+    transition: .5s;
+}
+
+.folder-container-open {
+    transform: translate(0px, 0px) scale(1);
+}
+
+.bar-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.fa-square-xmark {
+    font-size: 1.5em !important;
+    margin-right: 5px;
+}
+
+div.images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px;
+}
+
+div.img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+div.img img {
+    border-radius: 5px;
+    width: 150px;
+    height: 85px;
+    object-fit: cover;
+}
+
+.button-download {
+    transition: .5s;
+    background-color: yellow;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    padding: 7px 20px;
+    cursor: pointer;
+    clip-path: polygon(0 29%, 14% 24%, 23% 6%, 85% 0%, 85% 15%, 100% 61%, 81% 100%, 100% 84%, 56% 100%, 0 93%, 20% 80%, 5% 77%);
+}
+
+.button-download:hover {
+    transform: scale(1.1)
+}
+
+div.folder-bar-left {
+    display: flex;
+    align-items: center;
+    gap: 0 5px;
+    border: 1px solid black;
+    padding: 3px;
+    flex: 90%;
+}
+
+div.folder-bar-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 3px;
+    flex: 10%;
+}
+
+div.folder-bar-right i,
+div.folder-bar-left i {
+    font-size: 1.15em;
+    color: black;
+    filter: none;
+} 
+
+div.folder-bar-right i:hover,
+div.folder-bar-left i:hover {
+    transform: none;
+    cursor: auto;
+}
+
+.perfil {
+    width: 350px;
+    height: auto;
+    padding: 15px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 20px;
+    display: grid;
+    gap: 10px;
+    transition: .4s;
+}
+
+.perfilOpen {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.skills-area h2 {
+    margin-bottom: 10px;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.contact-area {
+    background: linear-gradient(#1b1919, rgba(27, 25, 25, .5)), 
+    url('../images/569355.png') no-repeat center right / cover;
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.contact-area h2 {
+    margin-bottom: 10px;
+}
+
+.contacts-info {
+    display: grid;
+    gap: 5px;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.contact-info i {
+    font-size: 1em !important;
+    margin-right: 5px;
+    cursor: auto;
+    transform: none;
+}
+
+.contact-info a {
+    color: white;
+    background-color: rgb(78, 117, 91);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.info {
+    display: none;
+}
+
+@media (max-width: 767px) and (max-height: 900px) {
+    .folder-container,
+    .folder-container-open {
+        top: 30%;
+        width: 90%;
+        height: auto;
+    }
+
+    div.images {
+        flex-wrap: nowrap;
+        overflow: hidden;
+        overflow-x: scroll;
+    }
+
+    div.img img {
+        width: 100px;
+        height: 50px;
+    }
+
+    .spotify {
+        width: 100%;
+        height: 80vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        transform: translateY(-350px) scale(0);
+        transition: .5s;
+    }
+    
+    .spotify-open {
+        transform: translateY(0px) scale(1);
+    }
+    
+    .spotify iframe {
+        width: 100%;
+        height: 100%;
+    }
+
+    .perfil {
+        width: 90%;
+    }
+
+}
